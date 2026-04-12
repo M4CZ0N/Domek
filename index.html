@@ -865,6 +865,18 @@ function handleSwipe() {
     nextImage();
   }
 }
+// zamykanie menu po kliknięciu poza nie
+document.addEventListener("click", (e) => {
+  const nav = document.getElementById("nav");
+  const hamburger = document.querySelector(".hamburger");
+
+  const clickedInsideMenu = nav.contains(e.target);
+  const clickedHamburger = hamburger.contains(e.target);
+
+  if (!clickedInsideMenu && !clickedHamburger) {
+    nav.classList.remove("show");
+  }
+});
 </script>
 
 
