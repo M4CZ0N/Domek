@@ -382,29 +382,134 @@ footer {
 .rezerwacja{
   text-shadow: 2px 2px 3px rgb(15, 53, 27);
 }
+@media (max-width: 768px) {
+
+  /* =========================
+     HERO
+     ========================= */
+  .hero {
+    height: 70vh;
+    background-position: center;
+    padding: 20px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .hero-content {
+    padding: 0 10px;
+  }
+
+  /* =========================
+     OPIS
+     ========================= */
+  .opis {
+    width: 90% !important;
+    margin: auto;
+  }
+
+  /* =========================
+     GALERIA (bez czarnych pasków)
+     ========================= */
+  .main-box {
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .gallery-wrapper {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .thumb {
+    width: 90px;
+    height: 60px;
+  }
+
+  .arrow {
+    font-size: 24px;
+  }
+
+}
+/* HAMBURGER domyślnie ukryty */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  color: white;
+  cursor: pointer;
+}
+
+/* ===== DESKTOP (domyślnie menu normalne) ===== */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav {
+    display: none; /* ukryte dopóki nie klikniesz */
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    flex-direction: column;
+    background: rgba(30,30,30,0.95);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+    width: 200px;
+  }
+
+  .nav.show {
+    display: flex;
+  }
+}
+@media (max-width: 768px) {
+  .hero {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
 </style>
 </head>
 
 <body>
 <header class="header" id="header">
-<div class="nav-container">
-  <div class="logo">Domek Stryszawa</div>
+  <div class="nav-container">
 
-  <nav class="nav">
-    <a href="#opis">Opis</a>
-    <a href="#galeria">Galeria</a>
-    <a href="#atrakcje">Atrakcje</a>
-    <a href="#opinie">Opinie</a>
-    <a href="#lokalizacja">Lokalizacja</a>
-    <a href="#kontakt" class="reserve">Rezerwacja</a>
-  </nav>
-</div>
+    <div class="logo">Domek Beskidy</div>
+
+    <!-- HAMBURGER (tylko mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <nav class="nav" id="nav">
+      <a href="#opis">Opis</a>
+      <a href="#galeria">Galeria</a>
+      <a href="#atrakcje">Atrakcje</a>
+      <a href="#opinie">Opinie</a>
+      <a href="#lokalizacja">Lokalizacja</a>
+      <a href="#kontakt" class="reserve">Rezerwacja</a>
+    </nav>
+
+  </div>
 </header>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Domek w Beskidach – Stryszawa</h1>
+    <h1>Domek w Beskidach – Przysłop</h1>
     <p>Odetchnij świeżym powietrzem i odpocznij z dala od codzienności</p>
     <a href="#kontakt" class="btn">Zaplanuj pobyt</a>
   </div>
@@ -726,6 +831,40 @@ window.addEventListener("scroll", () => {
     header.classList.remove("scrolled");
   }
 });
+function toggleMenu() {
+  const nav = document.getElementById("nav");
+  nav.classList.toggle("show");
+}
+let touchStartX = 0;
+let touchEndX = 0;
+
+const gallery = document.getElementById("mainBox");
+
+// start dotyku
+gallery.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+// koniec dotyku
+gallery.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  // minimalny ruch żeby nie odpalało przy kliknięciu
+  if (Math.abs(swipeDistance) < 40) return;
+
+  if (swipeDistance > 0) {
+    // swipe w prawo → poprzednie zdjęcie
+    prevImage();
+  } else {
+    // swipe w lewo → następne zdjęcie
+    nextImage();
+  }
+}
 </script>
 
 
