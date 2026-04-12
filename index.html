@@ -1,9 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://images.githubusercontent.com">
 <title>Domek Letniskowy w Stryszawie</title>
 
 <style>
@@ -299,7 +299,7 @@ footer {
     <h2>Galeria zdjęć</h2>
 
     <div class="gallery-wrapper">
-      <img id="mainBox" class="main-box" src="images/PrzyslopFront.jpg">
+      <img id="mainBox" class="main-box" src="images/PrzyslopFront.jpg" loading="eager">
 
       <div class="slider-wrap">
         <div class="arrow" onclick="prevImage()">❮</div>
@@ -420,6 +420,8 @@ function renderThumbs() {
     const img = document.createElement("img");
     img.src = src;
     img.className = "thumb";
+    
+    img.loading = "lazy";
 
     img.onclick = () => setImage(index);
 
