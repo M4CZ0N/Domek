@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://images.githubusercontent.com">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-<title>Domek Letniskowy pod Magurką</title>
+<title>Domek pod Magurką | Wynajem krótkoterminowy </title>
 
 <style>
 body {
@@ -271,6 +271,8 @@ section {
   padding: 30px;
   font-style: italic;
   border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 5px #cacaca;
 }
 
 /* MAPA */
@@ -655,13 +657,24 @@ footer {
   <div class="container">
     <h2>Opinie gości</h2>
     <div class="review">
-      „Jedna z przykładowych recenzji które mogą się tu znaleźć”
-      <br><br>– Jan Kowalski
+      „Domek w środku jest po prostu przepiękny - widać ogrom pracy i serduszka włożone przez właścicieli! 💜 Widoki z balkonu zapierają dech w piersi. To idealne miejsce, by odpocząć od codziennego zgiełku 💜”
+      <br><br>– Ania Prorok-Surówka
+    </div>
+    <div class="review">
+      „Byłem weekend w domku pod Magurką i naprawdę super miejsce na odpoczynek. Cisza, piękne widoki i bardzo klimatyczny domek 😊 Wszystko czyste i zadbane, a właściciele bardzo w porządku. Na pewno jeszcze wrócę 👍”
+      <br><br>– Maciej Pochopień
+    </div>
+    <div class="review">
+      „Byliśmy całą rodziną i jesteśmy zachwyceni ❤️ Domek piękny, bardzo czysty i świetnie wyposażony. Dzieci miały dużo miejsca do zabawy, a my mogliśmy spokojnie odpocząć i nacieszyć się widokami. Na pewno jeszcze wrócimy!”
+      <br><br>– Agnieszka Borowicz
     </div>
   </div>
 </section>
 
-<!-- MAPA -->
+<hr style="width: 90%; border: 1px solid #dbdbdb;">
+
+<!-- MAPA --> 
+<!-- trzeba poczekac na lokalizacje od google maps -->
 <div id="lokalizacja"></div>
 <section>
   <div class="container">
@@ -682,12 +695,40 @@ footer {
     <div class="contact-box"> 
       <h2>Skontaktuj się z nami</h2> 
       <p>Zapytaj o dostępne terminy i ceny – odpowiemy najszybciej jak to możliwe.</p> 
-      <form> 
-        <input type="text" placeholder="Imię i nazwisko" required /> 
-        <input type="email" placeholder="Adres e-mail" required /> 
-        <input type="tel" placeholder="Numer telefonu" /> 
-        <textarea rows="5" placeholder="Wiadomość"></textarea> 
-        <button type="submit" class="submit-btn">Wyślij zapytanie</button>
+
+      <form action="https://formspree.io/f/xykoneab" method="POST"> 
+        
+        <input 
+          type="text" 
+          name="name"
+          placeholder="Imię i nazwisko" 
+          required 
+        /> 
+
+        <input 
+          type="email" 
+          name="email"
+          placeholder="Adres e-mail" 
+          required 
+        /> 
+
+        <input 
+          type="tel" 
+          name="phone"
+          placeholder="Numer telefonu" 
+        /> 
+
+        <textarea 
+          name="message"
+          rows="5" 
+          placeholder="Wiadomość"
+          required
+        ></textarea> 
+
+        <button type="submit" class="submit-btn">
+          Wyślij zapytanie
+        </button>
+
       </form> 
     </div> 
   </div> 
