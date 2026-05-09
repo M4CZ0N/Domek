@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dziękujemy | Domek pod Magurką</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+    url("images/PrzyslopKrajobraz4.jpg");
+
+  background-size: cover;
+  background-position: center;
+  min-height:100vh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  color:white;
+}
+
+.box{
+  width:90%;
+  max-width:700px;
+
+  background: rgba(30,30,30,0.75);
+  backdrop-filter: blur(10px);
+
+  padding:50px 35px;
+  border-radius:20px;
+
+  text-align:center;
+
+  box-shadow:0 10px 40px rgba(0,0,0,0.35);
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+p{
+  font-size:18px;
+  line-height:1.7;
+  color:#f1f1f1;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:30px;
+
+  background:#2e8b57;
+  color:white;
+
+  text-decoration:none;
+
+  padding:15px 30px;
+  border-radius:8px;
+
+  transition:0.3s;
+  box-shadow:0 4px 10px rgba(0,0,0,0.25);
+}
+
+.btn:hover{
+  background:#276b46;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.35);
+}
+
+@media (max-width:768px){
+
+  h1{
+    font-size:30px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .box{
+    padding:40px 25px;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <div class="box">
+
+    <h1>Dziękujemy za wiadomość!</h1>
+
+    <p>
+      Otrzymaliśmy Twoje zapytanie i odpowiemy najszybciej jak to możliwe.
+    </p>
+
+    <p>
+      Do zobaczenia w Beskidach!
+    </p>
+
+    <a href="index.html" class="btn">
+      Powrót do strony
+    </a>
+
+  </div>
+
+</body>
+</html>
